@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de Dados</title>
+    <style>
+        body{
+            background-color: #40628d;
+        }
+        h1{
+            text-align: center;
+            color: #dfcb5f;
+        }
+        p{
+            text-align: justify;
+            color: #ebebeb;
+        }/*Comentário em CSS é assim*/
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Parágrafos são colocados entre a tag p, é bem intuitivo!</p> 
+    <!--Assim se comenta em HTML-->
+
+    <script>
+        var num1 = window.prompt('Digite um número:')
+        var num2 = window.prompt('Digite outro número:')
+        var soma = num1+num2
+        window.alert(`A soma de ${num1} + ${num2} é ${soma}`)
+
+        // number + number = soma
+        // string + string = concatenação
+        soma = Number(num1)+Number(num2) 
+        //Assim, podemos converter para número. Caso eu queira que seja inteiro ou real, usamos Number.parseInt ou Number.parseFloat
+        window.alert(`Brincadeira! A soma na verdade é: ${soma}`)
+    </script>
+</body>
+</html>
