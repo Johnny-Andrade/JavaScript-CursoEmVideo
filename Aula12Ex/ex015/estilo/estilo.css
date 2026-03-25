@@ -18,6 +18,21 @@ section{
     width: 80vw;
     margin: auto;
     box-shadow: 3px 3px 10px #00000065;
+    margin-bottom: 10px;
+}
+div{
+    padding: 5px;
+}
+div#res{
+    text-align: center;
+}
+div p{
+    line-height: 1.5em;
+}
+
+img{
+    margin: auto;
+    border-radius: 50%;
 }
 footer{
     color: white;
