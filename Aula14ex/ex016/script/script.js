@@ -1,37 +1,32 @@
 function contar(){
-    var inicio = Number(document.querySelector('input#inicio').value)
-    var fim = Number(document.querySelector('input#fim').value)
-    var passo = Number(document.querySelector('input#passo').value)
-    var msg = document.querySelector('p#res')
-    var valid = true
+    let ini= document.querySelector('input#inicio')
+    let fim = document.querySelector('input#fim')
+    let passo = document.querySelector('input#passo')
+    let res = document.querySelector('p#res')
 
-    if(inicio == 0 || fim == 0){
-        alert('[ERRO] Preencha os dados e tente novamente')
-        valid = false
-    } else if(passo == 0 || passo > fim){
-        passo = 1
-        alert('Passo inválido. Considerando passo 1.')
-        valid = true
-    }
+    if(ini.value.length == 0 || fim.value.length == 0 || passo.value.lenght == 0){
+        res.innerHTML = 'Impossível contar. Preencha os dados novamente.'
+    } else{
+        res.innerHTML = 'Contando: <br>'
+        let iniN = Number(ini.value)
+        let fimN = Number(fim.value)
+        let passoN = Number(passo.value)
+        
+        if(passoN <= 0){
+            passoN = 1
+            alert('Passo inválido. Considerando passo 1.')
+        }
 
-    if(inicio > fim && passo >0 || inicio < fim && passo <0){
-        alert('Invertendo valor de passo.')
-        passo = passo*-1
-    }
-
-    if(valid == true){
-        msg.innerHTML = `Contando: `
-
-        if(inicio < fim){
-            for(var cont = Number(inicio) ; cont <= fim ; cont+= passo){
-            msg.innerHTML += `${cont} > `
+        if(iniN < fimN){
+            for(let c = iniN; c <= fimN; c += passoN){ //Contagem Crescente
+            res.innerHTML += `${c} \u{1F449}`
             }
-        } else if (fim < inicio){
-            for(var cont = Number(inicio) ; cont >= fim ; cont+= passo){
-            msg.innerHTML += `${cont} > `
+        } else{
+            for(let c = iniN; c >= fimN; c -= passoN){ //Contagem Regressiva
+                res.innerHTML += `${c} \u{1F449}`
+            }
         }
-        }
-
-        msg.innerHTML+='<strong>Fim!</strong>'
+        res.innerHTML += `Fim! \u{1F3C1}`
     }
+
 }

@@ -19,6 +19,12 @@ section{
     margin: auto;
     box-shadow: 3px 3px 10px #00000065;
 }
+div{
+    padding: 5px;
+}
+select{
+    width: 30vw;
+}
 footer{
     color: white;
     text-align: center;
